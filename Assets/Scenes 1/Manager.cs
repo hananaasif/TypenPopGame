@@ -23,7 +23,7 @@ public class Manager : MonoBehaviour
     private void Start()
     {
         
-        pauseMenuWindow.SetActive(false);
+        pauseMenuWindow?.SetActive(false);
         manager = GameObject.FindGameObjectWithTag("ScoreManager").GetComponent<ScoreManager>();
     }
 
