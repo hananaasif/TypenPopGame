@@ -1,3 +1,67 @@
+# Type 'n Pop
+
+A 2D typing arcade game built with Unity and C#. Type the words displayed on rising balloons and press Enter to pop them before they escape. The game combines keyboard input, randomized targets, animated feedback, and increasing balloon speed to create a typing challenge.
+
+## Play the game
+
+**[Play Type 'n Pop on itch.io](https://hananaasif.itch.io/type-n-pop)**
+
+## Gameplay
+
+1. Start from the main menu and choose a game mode.
+2. Read the words attached to the rising balloons.
+3. Type a complete word into the input field and press **Enter**.
+4. A matching balloon plays its popping animation and increases your balloon count.
+5. Keep clearing balloons while managing the timer or remaining lives.
+
+Submitted input is converted to lowercase before matching. An incorrect submission clears the input field without popping a balloon. Words are selected from a built-in vocabulary, with spawned words limited to eight characters.
+
+### Game modes
+
+| Mode | Objective | End condition |
+| --- | --- | --- |
+| Timed | Pop as many balloons as possible during a 60-second round. | The countdown reaches zero. |
+| Survival | Continue popping balloons while protecting five lives. | All five lives are lost after missed balloons leave the play area. |
+
+### Scoring
+
+- Each successfully matched balloon increases the balloon count by one.
+- The game-over screen displays both the number of balloons popped and a final score of **5 points per balloon**.
+- The in-game score label displays the running balloon count.
+
+## Controls
+
+| Input | Action |
+| --- | --- |
+| Keyboard | Type the word shown on a balloon. |
+| Enter | Submit the current word. |
+| Mouse / UI buttons | Choose a mode, pause, resume, restart, return to the main menu, or change the theme. |
+
+The input field automatically receives focus during gameplay. Pausing stops game time and disables the typing field; resuming restores both.
+
+## Features
+
+- **Randomized targets:** Balloons spawn with randomly selected words, horizontal positions, and one of five balloon prefabs.
+- **Spawn spacing:** Consecutive spawn positions are separated horizontally to help distribute targets across the screen.
+- **Increasing balloon speed:** The balloon movement force range increases as new balloons are created.
+- **Two game modes:** A countdown challenge and a lives-based survival challenge share the same gameplay scene.
+- **Physics-based movement:** `Rigidbody2D` components drive rising balloons, with trigger collisions detecting missed targets.
+- **Animated feedback:** Balloon popping uses Unity Animator transitions and animation events for sound playback and object cleanup.
+- **Audio:** Pop, click, and game-over sound effects accompany the game, alongside background music.
+- **Light and dark themes:** Theme switching updates backgrounds, icons, borders, windows, and text colors.
+- **Game flow:** Main menu, pause/resume, restart, game-over results, and return-to-menu controls.
+
+## Technology
+
+| Component | Technology |
+| --- | --- |
+| Game engine | Unity **2023.2.9f1** |
+| Programming language | C# |
+| Gameplay architecture | Unity `MonoBehaviour` components and serialized Inspector references |
+| Physics | Unity Physics 2D |
+| Text and typing field | TextMeshPro |
+| Keyboard input | Unity Input System **1.7.0** |
+| Interface | Unity UI (uGUI), with bundled Quantum Tek Quantum UI assets |
 | Animation and audio | Unity Animator, animation events, and AudioSource |
 
 Package dependencies are declared in [`Packages/manifest.json`](Packages/manifest.json), and the exact editor version is recorded in [`ProjectSettings/ProjectVersion.txt`](ProjectSettings/ProjectVersion.txt).
